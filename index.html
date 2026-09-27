@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Important for mobile phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 💗</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- Floating background decorations -->
+    <div class="floating-hearts"></div>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section id="intro" class="screen active">
+
+        <div class="content">
+
+            <div class="small-sparkle">
+                ✦
+            </div>
+
+            <p class="small-text">
+                A little something for you Archu...
+            </p>
+
+            <h1>
+                Hey <span id="friendName">Beautiful</span> 💗
+            </h1>
+
+            <h2>
+                Happy Birthday! 🎂
+            </h2>
+
+            <p class="description">
+                I have a little surprise waiting for you...
+            </p>
+
+            <button
+                class="main-btn"
+                onclick="showScreen('ready')"
+            >
+                Open Your Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= READY ================= -->
+
+    <section id="ready" class="screen">
+
+        <div class="content">
+
+            <div class="emoji-big">
+                👀
+            </div>
+
+            <h2>
+                Are you ready?
+            </h2>
+
+            <p class="description">
+                Are you ready to see your surprise? 💗
+            </p>
+
+            <div class="button-group">
+
+                <button
+                    class="main-btn"
+                    onclick="showScreen('balloons')"
+                >
+                    YESH 💕
+                </button>
+
+                <button
+                    id="noBtn"
+                    class="secondary-btn"
+                    onclick="noClicked()"
+                >
+                    NOPE 🙈
+                </button>
+
+            </div>
+
+            <p
+                id="noMessage"
+                class="cute-message"
+            ></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BALLOONS ================= -->
+
+    <section id="balloons" class="screen">
+
+        <div class="content">
+
+            <p class="small-text">
+                Your first little surprise...
+            </p>
+
+            <h2>
+                Pop the balloons 🎈
+            </h2>
+
+            <p class="description">
+                Tap each one to discover something special.
+            </p>
+
+
+            <div class="balloon-container">
+
+                <div class="balloon-wrapper">
+
+                    <button
+                        class="balloon pink"
+                        onclick="popBalloon(this, 0)"
+                    >
+                        🎈
+                    </button>
+
+                </div>
+
+
+                <div class="balloon-wrapper">
+
+                    <button
+                        class="balloon purple"
+                        onclick="popBalloon(this, 1)"
+                    >
+                        🎈
+                    </button>
+
+                </div>
+
+
+                <div class="balloon-wrapper">
+
+                    <button
+                        class="balloon peach"
+                        onclick="popBalloon(this, 2)"
+                    >
+                        🎈
+                    </button>
+
+                </div>
+
+
+                <div class="balloon-wrapper">
+
+                    <button
+                        class="balloon blue"
+                        onclick="popBalloon(this, 3)"
+                    >
+                        🎈
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="balloonMessage"
+                class="balloon-message"
+            >
+                <span id="messageText"></span>
+            </div>
+
+
+            <p
+                id="balloonCount"
+                class="progress"
+            >
+                0 / 4 balloons popped
+            </p>
+
+
+            <button
+                id="cakeButton"
+                class="main-btn hidden"
+                onclick="showScreen('cake')"
+            >
+                There's more to Go... 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+<!-- ================= CAKE ================= -->
+
+<section id="cake" class="screen">
+
+    <div class="content cake-content">
+
+        <p class="small-text">
+            Make a wish, birthday girl... ✨
+        </p>
+
+        <h2>
+            A Little Birthday Magic 🎂
+        </h2>
+
+        <p class="cake-subtitle">
+            Close your eyes, make a wish, and blow the candles... 💗
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div class="cake-scene">
+
+            <!-- Glow behind cake -->
+            <div class="cake-glow"></div>
+
+
+            <!-- Candles -->
+
+            <div class="candles">
+
+                <div class="candle candle-one">
+                    <div class="wick"></div>
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-two">
+                    <div class="wick"></div>
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-three">
+                    <div class="wick"></div>
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-four">
+                    <div class="wick"></div>
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-five">
+                    <div class="wick"></div>
+                    <div class="flame"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Cake -->
+
+            <div class="birthday-cake">
+
+                <!-- Top -->
+                <div class="cake-top">
+
+                    <div class="cream-top"></div>
+
+                    <div class="cake-sprinkles">
+                        <span>✦</span>
+                        <span>♡</span>
+                        <span>✦</span>
+                        <span>♡</span>
+                        <span>✦</span>
+                    </div>
+
+                </div>
+
+
+                <!-- First layer -->
+                <div class="cake-layer cake-layer-one">
+
+                    <div class="cream-drip">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <!-- Second layer -->
+                <div class="cake-layer cake-layer-two">
+
+                    <div class="cream-line"></div>
+
+                    <div class="cake-decorations">
+                        <span>🌸</span>
+                        <span>♡</span>
+                        <span>🌸</span>
+                        <span>♡</span>
+                        <span>🌸</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Bottom layer -->
+                <div class="cake-layer cake-layer-three">
+
+                    <div class="bottom-decoration">
+                        ✦ &nbsp; ✦ &nbsp; ✦
+                    </div>
+
+                </div>
+
+
+                <!-- Cake plate -->
+
+                <div class="cake-plate"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Wish message -->
+
+        <p
+            id="wishText"
+            class="description wish-text"
+        >
+            Make a wish... ✨
+        </p>
+
+
+        <!-- Blow button -->
+
+        <button
+            id="blowButton"
+            class="main-btn"
+            onclick="blowCandle()"
+        >
+            Blow the Candles 💨
+        </button>
+
+
+        <!-- Memory button -->
+
+        <button
+            id="memoryButton"
+            class="main-btn hidden"
+            onclick="showScreen('memories')"
+        >
+            Open Our Memories 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+    <!-- ================= MEMORIES - PAGE 1 ================= -->
+
+    <section id="memories" class="screen">
+
+        <div class="memory-content">
+
+            <p class="small-text">
+                A few moments...
+            </p>
+
+            <h2>
+                Favorite Clickes 💗
+            </h2>
+
+            <p class="description">
+                Some moments deserve to be remembered forever.
+            </p>
+
+
+            <div class="memory-grid">
+
+
+                <!-- MEMORY 1 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/img1.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="memory-text">
+
+                        <h3>
+                            The day when i Captured a First Picture of You 🌸
+                        </h3>
+
+                        <p>
+                            From then on, you became my most favourite person
+                            to capture in every little moment. 📸✨
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/img2.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="memory-text">
+
+                        <h3>
+                            You in Saree 🤌🏻
+                        </h3>
+
+                        <p>
+                            The kind of pretty that doesn’t need a caption.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEMORY 3 - VIDEO -->
+
+                <div class="memory-card">
+
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="images/video1.mp4"
+                            type="video/mp4"
+                        >
+                    </video>
+
+                    <div class="memory-text">
+
+                        <h3>
+                            Cutiee Pie 🎀
+                        </h3>
+
+                        <p>
+                            This one is so Close to my heart🫶🏻.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/img4.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="memory-text">
+
+                        <h3>
+                            Favourite Photo of You 💕
+                        </h3>
+
+                        <p>
+                            A little bossy, a lot pretty 😌<br>
+                            Definitely giving main character energy. 💅🏻
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GO TO SECOND MEMORY PAGE -->
+
+            <button
+                class="main-btn"
+                onclick="showScreen('mem')"
+            >
+                Few More 💕
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MEMORIES - PAGE 2 ================= -->
+
+    <section id="mem" class="screen">
+
+        <div class="mem-content">
+
+            <p class="small-text">
+                And a few more...
+            </p>
+
+            <h2>
+                More Favorite Moments of Us 💗
+            </h2>
+
+            <p class="description">
+                Because four memories were definitely not enough. 🥹
+            </p>
+
+
+            <div class="mem-grid">
+
+
+                <!-- MEMORY 1 -->
+
+                <div class="mem-card">
+
+                    <img
+                        src="images/img6.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="mem-text">
+
+                        <h3>
+                            Our first selfie 🤍
+                        </h3>
+
+                        <p>
+                         I still remember this my first VDD lab day and for you it was Physics Lab.
+I used to feel a little awkward and miss you during those lab hours. 🥹
+And after the lab, I’d tell you all the little things that happened in those 3 hours, and we’d cherish them together. 🫶🏻💗
+                        </p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- MEMORY 3 - VIDEO -->
+
+                <div class="mem-card">
+
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="images/video2.mp4"
+                            type="video/mp4"
+                        >
+                    </video>
+
+                    <div class="mem-text">
+
+                        <h3>
+                            Trio 🎀
+                        </h3>
+
+                        <p>
+                            Those GP days 💗 and there were days when taking at least one photo together was our little ritual. 📸🤍
+Looking back, those silly little clicks are so Special🫶🏻
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="mem-card">
+
+                    <img
+                        src="images/img7.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="mem-text">
+
+                        <h3>
+                            Just Us 😘
+                        </h3>
+
+                        <p>
+                            Those days when we’d sit together all day, talk endlessly, share everything, listen to music, and have fun 🫶🏻🎶
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="mem-card">
+
+                    <img
+                        src="images/img8.jpeg"
+                        alt="Our memory"
+                    >
+
+                    <div class="mem-text">
+
+                        <h3>
+                            Our friendship looks pretty in every frame. 💕
+                        </h3>
+
+                        <p>
+                          You’ve made this friendship so beautiful 🫶🏻 and 
+I’m genuinely grateful to have you by my side. 💗
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GO TO FINAL LETTER -->
+
+            <button
+                class="main-btn"
+                onclick="showScreen('final')"
+            >
+                One Last Thing 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FINAL ================= -->
+
+    <section id="final" class="screen">
+
+        <div class="content">
+
+            <div class="heart-animation">
+                💗
+            </div>
+
+
+            <p class="small-text">
+                And finally...
+            </p>
+
+
+            <h2>
+                Once again Happy Birthday 💕
+            </h2>
+
+
+            <h2 id="finalName">
+                Beautiful
+            </h2>
+
+<div class="letter">
+
+<p>
+    I honestly don't know when you became such an important
+    part of my life, but I'm really glad you did. ❤️
+    From our random talks and stupid jokes to all the little
+    moments, I remember all of them, and I've loved every bit of it.
+You might be wondering why I used these photos even though
+I have so many better-quality pictures of you. But these
+photos have been with me from day one. Most of them were
+actually taken by me. 😎
+
+And honestly, you look absolutely amazing in every single
+frame. These photos are proof that even though the camera
+quality is mid-range, you still shine in your own way. ❤️
+
+I hope this year gives you everything you want and a lot
+more reasons to smile, laugh, and enjoy every little moment.
+
+So here's to us and all the memories we're yet to make.
+Once again, Happy Birthday, my cutiee pie! ❤️🥹✨
+
+
+</p>
+
+</div>
+
+<div class="final-message">
+    Made with lots of Kaviya's endless love 💗
+</div>
+
+    </section>
+
+
+
+    <!-- ================= CONFETTI ================= -->
+
+    <div id="confetti-container"></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
